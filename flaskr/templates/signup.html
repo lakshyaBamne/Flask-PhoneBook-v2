@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    SIGN UP
+{% endblock %}
+
+
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div id="signup_maincontent">
+        <form id="signup_form" action="{{url_for('signup')}}" method="POST">
+            <label id="signup_text">SIGN UP</label>
+            <input name="username" id="signup_input_field" placeholder="Create Username">
+            <br>  
+            <input name="password" id="signup_password_field" placeholder="Create Password">
+            <br>
+            <label id="signup_field1" for="">ENTER DETAILS</label>
+            <input name="fullname" id="signup_student_name" placeholder="Full Name">
+            <br>
+            <input name="email" id="signup_email" placeholder="Email">
+            <br>
+            <input name="cno" id="signup_contact" placeholder="Contact Number">
+            <br>
+
+            <br><br>
+
+            <input type="submit" id="signup_submit" value="SUBMIT"><br>
+        </form>
+    </div>
+{% endblock %}
+

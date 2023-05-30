@@ -1,0 +1,185 @@
+/*
+    Global CSS configurations for elements used in all pages
+*/
+
+body{
+    font-family: serif;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* We have fixed the canvas to take the entire space in the viewport */
+
+.canvas{
+    /* flex container for the base html page for the website */
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar{
+    padding: 10px;
+    flex: 1 1 auto;
+
+    /* navbar itself acts as a flex container for the elements in it */
+    display: flex;
+    flex-direction: row;
+}
+
+.maincontent{
+    padding: 10px;
+    flex: 8 1 auto;
+}
+
+.footer{
+    padding: 10px;
+    flex: 1 1 auto;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* styles for the navbar for the website which remains the same */
+
+#navbar_left{
+    flex: 2 1 auto;
+}
+
+#navbar_right{
+    /* right div in the navbar is again a flex container */
+    display: flex;
+    flex-direction: row;
+
+    flex: 1 1 auto;
+
+    /* 
+        these two properties can be used to center text inside a flex container
+        in both main and cross axis directions.
+    */
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar_right > * {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Index page styles */
+#home_maincontent{
+    display: flex;
+    
+    position: inherit;
+    height: 100%;
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/* signin form style => div is made a flex container */
+
+#signin_maincontent{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    position: inherit;
+    height: 100%;
+    width: 100%;
+}
+
+#signin_form{
+    display: flex;
+    flex-direction: column;
+
+    position: inherit;
+    height: 60%;
+    width: 20%;
+}
+
+#signin_form > * {
+    display: flex;
+    flex-direction: flex;
+
+    flex: 1 1 auto;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#signin_text{
+    font-size: x-large;
+}
+
+#user_type{
+    font-size: x-large;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* signup form style => div is made a flex container */
+
+#signup_maincontent{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    position: inherit;
+    height: 100%;
+    width: 100%;
+}
+
+#signup_form{
+    display: flex;
+    flex-direction: column;
+
+    position: inherit;
+    height: 80%;
+    width: 20%;
+}
+
+#signup_form > * {
+    display: flex;
+    flex-direction: flex;
+
+    flex: 1 1 auto;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#signup_text{
+    font-size: x-large;
+}
+
+#user_type{
+    font-size: x-large;
+}
+
+

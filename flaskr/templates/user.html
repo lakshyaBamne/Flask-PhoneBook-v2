@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{ username }}
+        </title>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='user_style.css')}}">
+    </head>
+
+    <body>
+        <div class="canvas">
+            
+            <div class="navbar">
+                <div id="navbar_left">
+                    <em>Welcome {{ user_data['name'] }} !!</em>
+                </div>
+
+                <div id="navbar_right">
+                    <a id="navbar_home" href="{{url_for('index')}}">
+                        SIGN OUT
+                    </a>
+                </div>
+            </div>
+            
+            <div class="maincontent">
+                <div class="contact_list">
+                    <h1 style="font-size: x-large;" id="contact_list_h1">
+                        <em>Your Contacts</em>
+                    </h1>
+                    <table id="table_contact_list">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                        </tr>
+                        {% for detail in user_data['contact list'] %}
+                            <tr>
+                                <td>{{ detail['name'] }}</td>
+                                <td>{{ detail['email'] }}</td>
+                                <td>{{ detail['contact number'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+                <div class="stats">
+                    <div id="your_info">
+                        <em><b style="font-size: x-large;">Your Details</b></em>
+
+                        <br>
+
+                        <table id="your_info_table">
+                            <tr>
+                                <td>&bull;</td>
+                                <td><b>Username</b></td>
+                                <td>{{ username }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>&bull;</td>
+                                <td><b>Name</b></td>
+                                <td>{{ user_data['name'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>&bull;</td>
+                                <td><b>Email</b></td>
+                                <td>{{ user_data['email'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>&bull;</td>
+                                <td><b>Contact No.</b></td>
+                                <td>{{ user_data['contact'] }}</td>
+                            </tr>
+                        </table>
+
+                        <br>
+                        <br>
+
+                        <input type="submit" id="edit_contact_button" value="EDIT DETAILS">
+                    </div>
+
+                    <form id="add_new_contact" action="{{ url_for('user_page', username=username) }}" method="POST">
+                        <label id="new_contact_text"><em><b style="font-size: x-large;">New Contact</b></em></label>
+                        <input name="name" id="new_contact_name" placeholder="Full Name" value="{{name if name}}">
+                        <br>
+                        <input name="email" id="new_contact_email" placeholder="Email" value="{{email if email}}">
+                        <br>
+                        <input name="contact" id="new_contact_contact" placeholder="Contact Number" value="{{contact if contact}}">
+                        <br>
+                        <br>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="flash_message">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+                        <input type="submit" id="new_contact_submit" value="SUBMIT"><br>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer">
+            
+            </div>
+
+        </div>
+    </body>
+</html>
+
+
+

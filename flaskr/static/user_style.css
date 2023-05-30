@@ -1,0 +1,200 @@
+/*
+    Global configuration used in the global variables of user pages only
+*/
+body{
+    font-family: serif;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Whole content is also made a flexbox to manage the different sections easily */
+.canvas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Navbar styles on the user page */
+
+.navbar{
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#navbar_left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 3 1 auto;
+
+    font-size: x-large;
+}
+
+#navbar_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1 1 auto;
+
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Maincontent styles */
+.maincontent{
+    flex: 2 1 auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    margin: 10px;    
+
+}
+
+.contact_list{
+    flex: 5 1 auto;
+
+    margin: 10px;
+
+    background-color: pink;
+
+    border-style: solid;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: flex-start;
+    align-items: stretch;
+
+    overflow-y: scroll;
+
+}
+
+#table_contact_list{
+    background-color: palevioletred;
+}
+
+#contact_list_h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats{
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.stats > *{
+    flex: 1 1 auto;
+}
+
+#your_info{
+    width: 80%;
+    
+    margin: 10px;
+
+    background-color: aqua;
+
+    border-style: solid;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#add_new_contact{
+    width: 80%;
+
+    margin: 10px;
+
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-style: solid;
+}
+
+#new_contact_text{
+    flex: 10 1 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: larger;
+}
+
+#new_contact_name{
+    flex: 1 1 auto;
+}
+
+#new_contact_email{
+    flex: 1 1 auto;
+}
+
+#new_contact_contact{
+    flex: 1 1 auto;
+}
+
+#new_contact_submit{
+    flex: 0.5 1 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* footer styles */
+.footer{
+    flex: 1 1 auto;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Other styles */
+
+#edit_contact_button{
+    height: 2.5em;
+    width: 10em;
+}
+
+#new_contact_submit{
+    height: 2.5em;
+    width: 10em;
+}
+
+
