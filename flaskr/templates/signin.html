@@ -8,12 +8,12 @@
     <div id="signin_maincontent">
         <form id="signin_form" action="{{url_for('signin')}}" method="POST">
             <label id="signin_text">SIGN IN</label>
-            <input name="username" id="signin_input_field" placeholder="Username" value="{{username if username}}">
+            <input type="text" name="username" id="signin_input_field" placeholder="Username" value="{{username if username}}">
             <br>  
-            <input name="password" id="signin_password_field" placeholder="Password" value="{{password if password}}">
+            <input type="text" name="password" id="signin_password_field" placeholder="Password" value="{{password if password}}">
             <br>
 
-            <br><br>
+            <br>
 
             {% for message in get_flashed_messages() %}
                 {{ message }}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %} {% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="{{url_for('static', filename='user_style.css')}}">
+    </head>
+
+    <body>
+        <div class="canvas">
+            
+            <div class="navbar">
+                <div id="navbar_left" style="font-weight: bold; font-family:cursive ;">
+                    <em>Welcome {% block user_name %} {% endblock %} !!</em>
+                </div>
+
+                <div id="navbar_right">
+                    <a id="navbar_home" href="{{url_for('index')}}">
+                        SIGN OUT
+                    </a>
+                </div>
+            </div>
+            
+            <div class="maincontent">
+                <div class="contact_list">
+                    <em id="contact_list_em">Your Contacts</em>
+                    <table id="table_contact_list">
+                        <tr id="contact_list_header">
+                            <td style="font-size: larger;"><em><b>Name</b></em></td>
+                            <td style="font-size: larger;"><em><b>Email</b></em></td>
+                            <td style="font-size: larger;"><em><b>Contact</b></em></td>
+                        </tr>
+                        {% block user_contacts %} {% endblock %}
+                    </table>
+                </div>
+
+                <div class="stats">
+                    <div id="your_info">
+                        <em style="font-size: x-large;">Your Details</em>
+
+                        <br>
+
+                        <table id="your_info_table">
+                            {% block user_details %} {% endblock %}
+                        </table>
+
+                        <br>
+
+                        <input type="submit" id="edit_contact_button" value="EDIT DETAILS">
+                    </div>
+
+                    <br>
+
+                    <form id="add_new_contact" action="{{ url_for('user_page', username=username) }}" method="POST">
+                        <label id="new_contact_text"><em style="font-size: x-large;">New Contact</em></label>
+                        
+                        <input type="text" name="name" id="new_contact_name" placeholder="Full Name" value="{{name if name}}">
+                        <br>
+                        <input type="text" name="email" id="new_contact_email" placeholder="Email" value="{{email if email}}">
+                        <br>
+                        <input type="text" name="contact" id="new_contact_contact" placeholder="Contact Number" value="{{contact if contact}}">
+                        
+                        <br>
+                        
+                        {% block success_message %} {% endblock %}
+
+                        <input type="submit" id="new_contact_submit" value="SUBMIT"><br>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer">
+            
+            </div>
+
+        </div>
+    </body>
+</html>
+
+
+

@@ -1,9 +1,39 @@
 /*
+    Main Color scheme for the website
+*/
+
+
+
+:root{
+    /* --primary-color: #A6F7EA;
+    --secondary-color: #00362F;
+    --contrast-color: #00362F;
+    --text-contrast: #00362F;
+    --text-light: #A6F7EA; */
+
+    --primary-color: #FCEADE;
+    --secondary-color: #8C285C;
+    --contrast-color: #8C285C;
+    --text-contrast: #8C285C;
+    --text-light: #FCEADE;
+  
+}
+
+::placeholder{
+    color: var(--text-contrast);
+    font-family: cursive;
+}
+
+/*
     Global configuration used in the global variables of user pages only
 */
 body{
-    font-family: serif;
-    margin: 0;
+    font-family: cursive;
+    margin: 0px;
+}
+
+a{
+  border-radius: 25px;
 }
 
 a:link {
@@ -17,6 +47,28 @@ a:hover {
 }
 a:active {
     text-decoration: none;
+}
+
+h1{
+    margin: 0%;
+    padding: 2%;
+}
+
+input{
+    color: var(--text-contrast);
+    font-family: cursive;
+    background-color: var(--primary-color);
+    
+    border: 1px solid var(--text-contrast);
+
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    background-color: var(--text-contrast);
+    color: var(--primary-color);
+
+    border-radius: 5px;
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -34,16 +86,23 @@ a:active {
 /* Navbar styles on the user page */
 
 .navbar{
-    flex: 1 1 auto;
+    height: 10%;
 
     display: flex;
     flex-flow: row nowrap;
 
     align-items: center;
     justify-content: space-evenly;
+
+    background-color: var(--primary-color);
+
+    color: var(--text-contrast);
 }
 
-#navbar_left{
+#navbar_left{  
+    height: 100%;
+    width: 70%;
+  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,10 +110,18 @@ a:active {
     flex: 3 1 auto;
 
     font-size: x-large;
+
+    margin: 1%;
 }
 
 #navbar_right{
+    height: 100%;
+    width: 30%;
+  
     display: flex;
+
+    flex-flow: row nowrap;
+  
     align-items: center;
     justify-content: center;
 
@@ -62,26 +129,38 @@ a:active {
 
 }
 
+#navbar_home{
+    height: 60%;
+    width: 40%;
+    font-weight: bold;
+    color: var(--text-contrast);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar_home:hover{
+  background-color: #8C285C;
+  color: #FCEADE;
+}
+
 /* ------------------------------------------------------------------------------ */
 /* Maincontent styles */
 .maincontent{
-    flex: 2 1 auto;
+    height: 80%;
 
     display: flex;
     flex-flow: row nowrap;
 
-    margin: 10px;    
-
+    /* background-color: var(--contrast-color); */
+    background-image: linear-gradient(to bottom, #8c285c, #fad1c6)
 }
 
 .contact_list{
-    flex: 5 1 auto;
+    flex: 3 1 auto;
 
     margin: 10px;
-
-    background-color: pink;
-
-    border-style: solid;
 
     display: flex;
     flex-flow: column nowrap;
@@ -89,18 +168,26 @@ a:active {
     justify-content: flex-start;
     align-items: stretch;
 
+    overflow-x: scroll;
     overflow-y: scroll;
 
+    background-color: var(--primary-color);
+
+    border-radius: 25px;
 }
 
 #table_contact_list{
-    background-color: palevioletred;
+    height: 100%;
+    padding: 2%;
+
 }
 
-#contact_list_h1{
+#contact_list_em{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size:x-large;
 }
 
 .stats{
@@ -109,53 +196,67 @@ a:active {
     display: flex;
     flex-flow: column nowrap;
 
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: stretch;
+    justify-content: center;
+
 }
 
 .stats > *{
     flex: 1 1 auto;
+
+    margin: 10px;
 }
 
 #your_info{
-    width: 80%;
-    
-    margin: 10px;
-
-    background-color: aqua;
-
-    border-style: solid;
-
     display: flex;
     flex-flow: column nowrap;
 
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    background-color: var(--primary-color);
+
+    margin-bottom: 10px;
+
+    border-radius: 25px;
+
+
+}
+
+#your_info > *{
+    flex: 1 1 auto;
+}
+
+#edit_contact_button{
+    height: 1.5em;
+    width: 10em;
+
+    margin-bottom: 10px;
 }
 
 #add_new_contact{
-    width: 80%;
-
-    margin: 10px;
-
-
     display: flex;
     flex-flow: column nowrap;
 
     align-items: center;
-    justify-content: space-evenly;
 
-    border-style: solid;
+    background-color: var(--primary-color);
+
+    border-radius: 25px;
+
+
 }
 
 #new_contact_text{
-    flex: 10 1 auto;
+    flex: 3 1 auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: larger;
+    padding-bottom: 20px;
+
+    font-size:x-large;
 }
 
 #new_contact_name{
@@ -171,30 +272,27 @@ a:active {
 }
 
 #new_contact_submit{
-    flex: 0.5 1 auto;
+    flex: 1 1 auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    height: 1.5em;
+    width: 10em;
 }
 
 /* ------------------------------------------------------------------------------ */
 /* footer styles */
 .footer{
-    flex: 1 1 auto;
+    height: 10%;
+
+    background-color: var(--primary-color);
 }
 
 /* ------------------------------------------------------------------------------ */
 /* Other styles */
 
-#edit_contact_button{
-    height: 2.5em;
-    width: 10em;
-}
 
-#new_contact_submit{
-    height: 2.5em;
-    width: 10em;
-}
 
 

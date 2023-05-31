@@ -1,10 +1,41 @@
 /*
+    Main Color scheme for the website
+*/
+
+:root{
+    /* --primary-color: #A6F7EA;
+    --secondary-color: #00362F;
+    --contrast-color: #00362F;
+    --text-contrast: #00362F;
+    --text-light: #A6F7EA; */
+
+    --primary-color: #FCEADE;
+    --secondary-color: #8C285C;
+    --contrast-color: #8C285C;
+    --text-contrast: #8C285C;
+    --text-light: #FCEADE;
+}
+
+::placeholder{
+    color: var(--text-contrast);
+    font-family: cursive;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/*
     Global CSS configurations for elements used in all pages
 */
 
 body{
-    font-family: serif;
+    font-family: cursive;
     margin: 0;
+}
+
+a{
+  border-radius: 25px;
+  height: 50px;
+  width: 100px;
 }
 
 a:link {
@@ -20,6 +51,23 @@ a:active {
     text-decoration: none;
 }
 
+input{
+    color: var(--text-contrast);
+    font-family: cursive;
+    background-color: var(--primary-color);
+    
+    border: 1px solid var(--text-contrast);
+
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    background-color: var(--text-contrast);
+    color: var(--primary-color);
+
+    border-radius: 5px;
+}
+
 /* ------------------------------------------------------------------------------ */
 /* We have fixed the canvas to take the entire space in the viewport */
 
@@ -31,6 +79,9 @@ a:active {
     position: absolute;
     height: 100%;
     width: 100%;
+
+    /* Adding a background image to the canvas div which is present everywhere */
+    
 }
 
 .navbar{
@@ -40,16 +91,35 @@ a:active {
     /* navbar itself acts as a flex container for the elements in it */
     display: flex;
     flex-direction: row;
+
+    height: 10%;
+
+    background-color: var(--primary-color);
 }
 
 .maincontent{
     padding: 10px;
     flex: 8 1 auto;
+
+    height: 80%;
+
+    /* background-color: var(--text-contrast); */
+    background-image: linear-gradient(to bottom, #8c285c, #fad1c6);
+  
+}
+
+#main_background{
+    width: 100%;
+    height: 100%;
 }
 
 .footer{
     padding: 10px;
     flex: 1 1 auto;
+
+    height: 10%;
+
+    background-color: var(--primary-color);
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -57,6 +127,29 @@ a:active {
 
 #navbar_left{
     flex: 2 1 auto;
+
+    padding-left: 5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    font-family:'Courier New', Courier, monospace;
+
+    font-size: xx-large;
+}
+
+#website_svg{
+    flex: 1 1 auto;
+}
+
+#website_name{
+    flex: 6 1 auto;
+
+    font-weight: bolder;
+    color: var(--text-contrast);
 }
 
 #navbar_right{
@@ -72,6 +165,8 @@ a:active {
     */
     justify-content: center;
     align-items: center;
+
+    font-weight: bold;
 }
 
 #navbar_right > * {
@@ -79,6 +174,23 @@ a:active {
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
+
+    color: var(--text-contrast);
+}
+
+#navbar_home:hover{
+  background-color: #8C285C;
+  color: #FCEADE;
+}
+
+#navbar_signin:hover{
+  background-color: #8C285C;
+  color: #FCEADE;
+}
+
+#navbar_signup:hover{
+  background-color: #8C285C;
+  color: #FCEADE;
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -93,7 +205,6 @@ a:active {
     justify-content: center;
     align-items: center;
 
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: xx-large;
 }
 
@@ -111,6 +222,7 @@ a:active {
     position: inherit;
     height: 100%;
     width: 100%;
+
 }
 
 #signin_form{
@@ -118,8 +230,15 @@ a:active {
     flex-direction: column;
 
     position: inherit;
-    height: 60%;
+    height: 70%;
     width: 20%;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background-color: var(--primary-color);
+
 }
 
 #signin_form > * {
@@ -136,8 +255,13 @@ a:active {
     font-size: x-large;
 }
 
-#user_type{
-    font-size: x-large;
+#signin_input_field{
+    background-color: var(--primary-color);
+    color: var(--text-contrast);
+}
+
+#signin_password_field{
+    background-color: var(--primary-color);
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -160,8 +284,14 @@ a:active {
     flex-direction: column;
 
     position: inherit;
-    height: 80%;
+    height: 90%;
     width: 20%;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background-color: var(--primary-color);
 }
 
 #signup_form > * {
